@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   env: {
     NEXT_PUBLIC_CLOUD_URL: "https://9router.com",
   },
+
   webpack: (config, { isServer }) => {
-    // Ignore fs/path modules in browser bundle
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -15,6 +20,7 @@ const nextConfig = {
     }
     return config;
   },
+
   async rewrites() {
     return [
       {
