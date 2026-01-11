@@ -7,7 +7,7 @@ const nextConfig = {
   },
 
   env: {
-    NEXT_PUBLIC_CLOUD_URL: "https://9router.com",
+    NEXT_PUBLIC_CLOUD_URL: "https://9router.phuonghuynh.io.vn",
   },
 
   webpack: (config, { isServer }) => {
